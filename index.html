@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Four Function Calculator</title>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<label for="x">First number: </label><br>
+	<input type="text" name="x" id="x"/><br>
+	<br>
+	<div id="operation">
+		<input type="radio" name="op" id="add" value="+"/>
+		<label for="add">+</label><br>
+		<input type="radio" name="op" id="sub" value="-"/>
+		<label for="sub">-</label><br>
+		<input type="radio" name="op" id="mul" value="*"/>
+		<label for="mul">*</label><br>
+		<input type="radio" name="op" id="div" value="/"/>
+		<label for="div">/</label><br>
+	</div>
+	<br>
+	<label for="y">Second number: </label><br>
+	<input type="text" name="y" id="y"/><br>
+	<br>
+	<button onclick="calculate()">Calculate!</button>
+</body>
+</html>
