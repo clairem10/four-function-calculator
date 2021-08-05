@@ -24,8 +24,51 @@ function calculate() {
 	// Set up answer variable.
 	var ans = 0;
 
-	// TODO: Handle addition, subtraction, multiplication, and division.
+	// Handle addition, subtraction, multiplication, and division.
+	if (op == "+") {
+		ans = x+y;
+	} 
+
+	if (op == "-") {
+		ans = x-y;
+	}
+
+	if (op == "*") {
+		var first = document.getElementById("x").value;
+		var second = document.getElementById("y").value;
+		for (var i=0; i<second; i++) {
+			ans += (+first);
+		}
+	}
+
+	if (op == "/") {
+		var first = document.getElementById("x").value;
+		var second = document.getElementById("y").value;
+		if (second == "0") {
+			alert("Dividing by zero is undefined");
+		}
+
+		if (first == second) {
+			ans = 1; 
+		}
+
+		var diff = first-second;
+		ans = 1; 
+		while (diff > 0) {
+			first = first - (+second); 
+			diff = first-second;
+			ans++;
+		}
+	}
+
+	// Define the equation.
+	var equation = x + " " + op + " " + y + " = " + ans
 
 	// Log the equation.
-	console.log(x + " " + op + " " + y + " = " + ans);
+	console.log(equation);
+
+	// Display the equation on web page.
+	var div = document.createElement("div");
+	div.textContent = equation;
+	document.body.appendChild(div);
 }
